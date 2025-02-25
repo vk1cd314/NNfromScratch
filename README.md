@@ -1,72 +1,74 @@
-# NNfromScratch
+# Neural Networks from Scratch
 
-This is a pure NumPy implementation of a Neural Network designed to identify non-linear decision boundaries. The project demonstrates how to build a neural network from the ground up without using any deep learning frameworks, showcasing the fundamental concepts of neural networks.
+This project implements neural networks from scratch for classifying data with non-linear decision boundaries.
 
-## Overview
+## Description
 
-The neural network is implemented with the following features:
-- Built entirely using NumPy
-- Capable of identifying non-linear decision boundaries
-- Implements forward and backward propagation
-- Uses ReLU and Sigmoid activation functions
-- Includes momentum-based optimization
-- Implements weight decay for regularization
-- Uses Binary Cross-Entropy loss function
+A pure NumPy implementation of neural networks that can learn complex non-linear decision boundaries. The implementation includes:
 
-## Architecture
-
-The network uses a 5-layer architecture:
-1. Input Layer (2 neurons)
-2. Hidden Layer 1 (6 neurons, ReLU)
-3. Hidden Layer 2 (3 neurons, ReLU)
-4. Hidden Layer 3 (10 neurons, ReLU)
-5. Hidden Layer 4 (4 neurons, ReLU)
-6. Output Layer (1 neuron, Sigmoid)
+- Flexible multi-layer neural network architecture
+- Multiple activation functions (tanh, ReLU, Leaky ReLU)
+- Mini-batch gradient descent with L2 regularization
+- Support for different datasets with non-linear boundaries
+- Visualization of decision boundaries and training progress
 
 ## Results
 
-### Decision Boundary
-![Decision Boundary](decision_boundary.png)
-The decision boundary learned by the neural network, showing its ability to separate non-linear patterns in the data.
+The neural network can successfully learn complex non-linear decision boundaries for various datasets:
 
-### Training Progress
-![Loss](loss.png)
-The training loss over epochs, demonstrating the network's convergence.
+### Circles Dataset
+![Circles Decision Boundary](results/circles_decision_boundary.png)
 
-![Accuracy](accuracy.png)
-The accuracy metrics during training, showing the model's learning progress.
+### Moons Dataset
+![Moons Decision Boundary](results/moons_decision_boundary.png)
 
-### Generalization Performance
-![Size Generalization](size_generalization.png)
-A heatmap showing how well the model generalizes across different training and test set sizes.
+### Spiral Dataset
+![Spiral Decision Boundary](results/spiral_decision_boundary.png)
 
-### Data Distribution
-![Data Distribution](data.png)
-Visualization of the training data distribution used to train the network.
+### XOR Dataset
+![XOR Decision Boundary](results/xor_decision_boundary.png)
 
-## Features
+## Activation Function Comparison
 
-### Training
-- Learning rate: 0.005
-- Momentum: 0.9
-- Weight decay: 0.0001
-- Epochs: 1000
+Different activation functions can affect the model's ability to learn non-linear boundaries:
 
-### Activation Functions
-- ReLU for hidden layers
-- Sigmoid for output layer
+![Activation Comparison](results/circles_activation_comparison.png)
 
-### Loss Function
-- Binary Cross-Entropy with epsilon smoothing
+## Project Structure
+
+- `neural_network.py`: Core neural network implementation
+- `data_generator.py`: Synthetic dataset generators
+- `train_model.py`: Training and evaluation code
+- `visualize_results.py`: Visualization utilities
+
+## How to Run
+
+To train the model and generate visualizations:
+
+```bash
+# Install dependencies
+pip install numpy matplotlib
+
+# Run the training script
+python train_model.py
+```
 
 ## Implementation Details
 
-The implementation includes:
-- Vectorized operations for efficient computation
-- Momentum-based gradient descent optimization
-- Weight initialization using Xavier/Glorot initialization
-- Modular architecture design for easy modification
-- Comprehensive evaluation across different dataset sizes
+This implementation features:
+
+1. **Enhanced Initialization**: Xavier/Glorot initialization for better convergence
+2. **Mini-batch Training**: More efficient than full-batch gradient descent
+3. **Regularization**: L2 regularization to prevent overfitting
+4. **Multiple Activation Functions**: Non-linear functions enable complex decision boundaries
+5. **Numerical Stability**: Techniques to avoid overflow/underflow in calculations
+
+## Future Improvements
+
+- Add momentum and adaptive learning rates
+- Implement dropout regularization
+- Add batch normalization
+- Support for more complex architectures
 
 ## License
 

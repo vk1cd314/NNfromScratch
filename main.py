@@ -11,6 +11,7 @@ def get_data(N=300):
     Y[T == 1] = 1
     return X, Y
 
+
 class NN:
     def __init__(self, architecture):
         self.activations = []
