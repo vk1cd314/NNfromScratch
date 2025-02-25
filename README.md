@@ -63,13 +63,6 @@ This implementation features:
 4. **Multiple Activation Functions**: Non-linear functions enable complex decision boundaries
 5. **Numerical Stability**: Techniques to avoid overflow/underflow in calculations
 
-## Future Improvements
-
-- Add momentum and adaptive learning rates
-- Implement dropout regularization
-- Add batch normalization
-- Support for more complex architectures
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
